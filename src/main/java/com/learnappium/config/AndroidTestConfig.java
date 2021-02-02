@@ -25,7 +25,7 @@ public class AndroidTestConfig {
 
     @Bean
     public AppiumDriver<MobileElement> appiumDriver() throws MalformedURLException {
-        AndroidDriver<MobileElement> driver = new AndroidDriver<MobileElement>(new URL("http://localhost:4723/wd/hub"), getCapabilities());
+        AndroidDriver<MobileElement> driver = new AndroidDriver<>(new URL("http://localhost:4723/wd/hub"), getCapabilities());
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         return driver;
     }
